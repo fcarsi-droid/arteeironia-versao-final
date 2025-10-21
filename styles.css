@@ -1,0 +1,361 @@
+:root {
+  --roxo: #6a0dad;
+  --amarelo: #ffd60a;
+  --cinza-claro: #f7f7f7;
+  --texto: #2b014f;
+}
+
+/* ========== RESET GERAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cinza-claro);
+  color: var(--texto);
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ========== MENU SUPERIOR ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  z-index: 1000;
+}
+
+.logo {
+  font-family: "Archivo Black", sans-serif;
+  color: var(--roxo);
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.menu a {
+  color: var(--texto);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: var(--amarelo);
+}
+
+/* ========== CARROSSEL DE FRASES (INDEX) ========== */
+.carrossel-manifesto {
+  background: var(--roxo);
+  color: var(--amarelo);
+  padding: 60px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.frase-container {
+  width: 100%;
+  text-align: left;
+}
+
+.frase-container p {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease-in-out;
+}
+
+.frase-container p.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.frase-container p.fade-out {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* ========== MOSAICO PRINCIPAL (INDEX) ========== */
+.mosaico {
+  text-align: center;
+  padding: 40px 20px 60px;
+}
+
+.mosaico h1 {
+  font-family: "Archivo Black", sans-serif;
+  color: var(--roxo);
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.mosaico-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: brightness(60%);
+}
+
+.botao-colecao {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--amarelo);
+  color: var(--roxo);
+  font-family: "Archivo Black", sans-serif;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .botao-colecao {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* ========== BANNER PROMOCIONAL ========== */
+.banner-promo {
+  background: var(--roxo);
+  text-align: center;
+  color: var(--amarelo);
+  padding: 100px 20px 60px; /* compensando a navbar fixa */
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.banner-promo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.banner-promo p {
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+/* ========== MANIFESTO ========== */
+.manifesto {
+  background: white;
+  padding: 80px 30px;
+  text-align: center;
+  max-width: 900px;
+  margin: 60px auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.manifesto h2 {
+  font-family: "Archivo Black", sans-serif;
+  color: var(--roxo);
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.manifesto p {
+  margin: 12px 0;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+.manifesto blockquote {
+  margin: 25px auto;
+  font-style: italic;
+  color: var(--roxo);
+  border-left: 4px solid var(--amarelo);
+  padding-left: 15px;
+}
+
+/* ========== CONTATO E SOCIAL ========== */
+.contato {
+  text-align: center;
+  padding: 60px 30px;
+}
+
+.contato h2 {
+  font-family: "Archivo Black", sans-serif;
+  color: var(--roxo);
+  margin-bottom: 20px;
+}
+
+.social a {
+  color: var(--roxo);
+  font-size: 1.8rem;
+  margin: 0 15px;
+  transition: 0.3s;
+}
+
+.social a:hover {
+  color: var(--amarelo);
+  transform: scale(1.1);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--roxo);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.9rem;
+  border-top: 4px solid var(--amarelo);
+}
+
+/* ========== COLEÇÕES (PÁGINAS INTERNAS) ========== */
+.banner-promo--colecao {
+  background: var(--roxo);
+  color: var(--amarelo);
+  text-align: center;
+  padding: 100px 20px 60px;
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.colecao-header {
+  text-align: center;
+  padding: 40px 30px 20px;
+  background: white;
+}
+
+.colecao-header .voltar {
+  display: inline-block;
+  color: var(--roxo);
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.colecao-header .voltar:hover {
+  color: var(--amarelo);
+}
+
+.colecao-header h1 {
+  font-family: "Archivo Black", sans-serif;
+  color: var(--roxo);
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.colecao-header .subtitulo {
+  color: var(--texto);
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* GRID DE PRODUTOS DAS COLEÇÕES */
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 40px 60px 100px;
+  justify-items: center;
+  background: var(--cinza-claro);
+}
+
+.produto {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.produto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(106,13,173,.25);
+}
+
+.produto img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: filter .25s ease, transform .25s ease;
+}
+
+.produto:hover img {
+  filter: brightness(62%);
+  transform: scale(1.03);
+}
+
+.botao-produto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(.98);
+  background: var(--amarelo);
+  color: var(--roxo);
+  font-family: "Archivo Black", sans-serif;
+  padding: 10px 20px;
+  border-radius: 28px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.produto:hover .botao-produto {
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1.04);
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 900px) {
+  .mosaico-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mosaico-grid img {
+    height: 200px;
+  }
+
+  .frase-container p {
+    font-size: 1.6rem;
+  }
+
+  .produtos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 20px 80px;
+  }
+}
